@@ -6,10 +6,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/main/resources/Features",glue= {"com.stepDefinition"},monochrome=true,
-plugin= {"html:Reports\\HTMLReports"},
-dryRun=false,
-strict=true)
+@CucumberOptions(features="src//main//resources//Features",
+glue= {"com.stepDefinition"},
+monochrome=true,
+plugin = { "pretty", "html:Reports/cucumber-reports/htmlreports.html"}
+)
 public class Runner {
 		
 	
