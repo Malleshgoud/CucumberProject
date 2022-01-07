@@ -1,0 +1,40 @@
+package com.pageFactory;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage_PageFactory {
+	
+	@FindBy(id="name")
+	WebElement txt_username;
+	
+	@FindBy(id="password")
+	WebElement txt_password;
+	
+	@FindBy(id="login")
+	WebElement btn_login;
+	
+	
+	WebDriver driver;
+	
+	public LoginPage_PageFactory(WebDriver driver)
+	{
+		this.driver=driver;
+		PageFactory.initElements(driver, LoginPage_PageFactory.class);
+		
+	}
+public void user_login(String username,String password)
+{
+	txt_username.sendKeys(username);
+	txt_password.sendKeys(password);
+	btn_login.click();
+}
+public void click_login_button()
+{
+
+	btn_login.click();
+}
+	
+}
